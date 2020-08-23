@@ -1,5 +1,5 @@
-%define snapshot 20200710
-%define commit 4e63f888fd94a8ab682daf523228357bf291a41c
+%define snapshot 20200823
+%define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
 Version:	0.0
@@ -46,5 +46,9 @@ Clock applet for Plasma Mobile
 %{_datadir}/applications/org.kde.kclock.desktop
 %{_datadir}/icons/hicolor/scalable/apps/kclock.svg
 %{_datadir}/metainfo/org.kde.kclock.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.kclock.appdata.xml
 %{_sysconfdir}/xdg/autostart/org.kde.kclock-autostart.desktop
 %{_datadir}/knotifications5/kclock.notifyrc
+%{_libdir}/qt5/plugins/plasma/applets/plasma_applet_kclock.so
+%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kclock.desktop
+%{_datadir}/plasma/plasmoids/org.kde.plasma.kclock

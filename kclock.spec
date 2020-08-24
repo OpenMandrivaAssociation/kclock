@@ -25,6 +25,7 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5Notifications)
+BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
 

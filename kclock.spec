@@ -2,13 +2,13 @@
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	0.4.0
+Version:	21.06
 %if 0%{?snapshot}
 Release:	0.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/master/kclock-%{snapshot}.tar.bz2
 %else
 Release:	1
-Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/v%{version}/kclock-v%{version}.tar.bz2
+Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary:	Clock applet for Plasma Mobile
 License:	GPLv3
@@ -41,7 +41,7 @@ Clock applet for Plasma Mobile
 %if 0%{?snapshot}
 %autosetup -p1 -n %{name}-master-%{commit}
 %else
-%autosetup -p1 -n %{name}-v%{version}
+%autosetup -p1
 %endif
 %cmake_kde5 -G Ninja
 
@@ -50,8 +50,9 @@ Clock applet for Plasma Mobile
 
 %install
 %ninja_install -C build
+%find_lang kclock
 
-%files
+%files -f kclock.lang
 %{_bindir}/kclock
 %{_bindir}/kclockd
 %{_datadir}/applications/org.kde.kclock.desktop

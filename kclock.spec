@@ -2,7 +2,7 @@
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	21.07
+Version:	21.08
 %if 0%{?snapshot}
 Release:	1.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/master/kclock-%{snapshot}.tar.bz2

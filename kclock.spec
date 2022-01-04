@@ -2,7 +2,7 @@
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	21.08
+Version:	21.12
 %if 0%{?snapshot}
 Release:	1.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/master/kclock-%{snapshot}.tar.bz2
@@ -66,3 +66,4 @@ Clock applet for Plasma Mobile
 %{_datadir}/dbus-1/interfaces/org.kde.kclockd.*.xml
 %{_datadir}/dbus-1/services/org.kde.kclockd.service
 %{_datadir}/icons/*/scalable/apps/kclock_plasmoid_1x2.svg
+%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kclock_1x2.desktop

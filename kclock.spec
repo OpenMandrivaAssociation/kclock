@@ -2,12 +2,12 @@
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	22.06
+Version:	22.09
 %if 0%{?snapshot}
-Release:	0.%{snapshot}.1
+Release:	1.%{snapshot}.1
 Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/master/kclock-%{snapshot}.tar.bz2
 %else
-Release:	2
+Release:	1
 Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary:	Clock applet for Plasma Mobile
@@ -50,7 +50,7 @@ Clock applet for Plasma Mobile
 
 %install
 %ninja_install -C build
-%find_lang kclock
+%find_lang kclock --all-name
 
 %files -f kclock.lang
 %{_bindir}/kclock

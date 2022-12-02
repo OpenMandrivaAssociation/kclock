@@ -2,12 +2,12 @@
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	22.09
+Version:	22.11
 %if 0%{?snapshot}
-Release:	0.%{snapshot}.1
+Release:	0.%{snapshot}1
 Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/master/kclock-%{snapshot}.tar.bz2
 %else
-Release:	2
+Release:	1
 Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary:	Clock applet for Plasma Mobile
@@ -56,7 +56,7 @@ Clock applet for Plasma Mobile
 %{_bindir}/kclock
 %{_bindir}/kclockd
 %{_datadir}/applications/org.kde.kclock.desktop
-%{_datadir}/icons/hicolor/scalable/apps/kclock.svg
+%{_datadir}/icons/hicolor/scalable/apps/org.kde.kclock.svg
 %{_datadir}/metainfo/org.kde.kclock.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.kclock_1x2.appdata.xml
 %{_sysconfdir}/xdg/autostart/org.kde.kclockd-autostart.desktop

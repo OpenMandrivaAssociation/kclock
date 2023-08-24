@@ -1,14 +1,14 @@
-#define snapshot 20200823
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+#define git 20200823
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	22.11
-%if 0%{?snapshot}
-Release:	0.%{snapshot}1
-Source0:	https://invent.kde.org/plasma-mobile/kclock/-/archive/master/kclock-%{snapshot}.tar.bz2
+Version:	23.08.0
+Release:	%{?git:0.%{git}.}1
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
 %else
-Release:	2
-Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 %endif
 Summary:	Clock applet for Plasma Mobile
 License:	GPLv3
@@ -39,7 +39,7 @@ BuildRequires:	pkgconfig(openssl)
 Clock applet for Plasma Mobile
 
 %prep
-%if 0%{?snapshot}
+%if 0%{?git}
 %autosetup -p1 -n %{name}-master-%{commit}
 %else
 %autosetup -p1
@@ -67,4 +67,3 @@ Clock applet for Plasma Mobile
 %{_datadir}/dbus-1/interfaces/org.kde.kclockd.*.xml
 %{_datadir}/dbus-1/services/org.kde.kclockd.service
 %{_datadir}/icons/*/scalable/apps/kclock_plasmoid_1x2.svg
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kclock_1x2.desktop

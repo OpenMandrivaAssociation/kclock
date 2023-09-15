@@ -3,7 +3,7 @@
 #define commit 8c52fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		kclock
-Version:	23.08.0
+Version:	23.08.1
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2

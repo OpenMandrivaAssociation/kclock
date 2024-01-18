@@ -19,6 +19,9 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Quick)
+BuildRequires: cmake(Qt6Qml)
+BuildRequires: cmake(Qt6QmlCore)
+BuildRequires: cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Svg)
@@ -31,10 +34,13 @@ BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6DBusAddons)
 BuildRequires:	cmake(KF6Notifications)
+BuildRequires:	cmake(KF6StatusNotifierItem)
 BuildRequires:	cmake(PlasmaQuick)
 BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
+BuildRequires: qt6-qtbase-theme-gtk3
+BuildRequires: qt6-qtmultimedia-gstreamer
 
 %description
 Clock applet for Plasma Mobile

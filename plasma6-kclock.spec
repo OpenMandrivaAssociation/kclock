@@ -3,8 +3,8 @@
 #define commit 8c62fe3f8cc1fbc9b47fd6c32890bc91db69b28a
 
 Name:		plasma6-kclock
-Version:	24.01.90
-Release:	%{?git:0.%{git}.}3
+Version:	24.01.95
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
 %else

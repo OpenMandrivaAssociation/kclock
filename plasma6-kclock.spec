@@ -1,12 +1,13 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20200823
-#define commit 8c62fe3f8cc1fbc9b47fd6c32890bc91db69b28a
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		plasma6-kclock
-Version:	24.01.95
+Version:	24.01.96
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
+Source0:	https://invent.kde.org/utilities/kclock/-/archive/%{gitbranch}/kclock-%{gitbranchd}.tar.bz2
 %else
 Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kclock-%{version}.tar.xz
 %endif
@@ -46,14 +47,10 @@ BuildRequires: qt6-qtmultimedia-gstreamer
 Clock applet for Plasma Mobile
 
 %prep
-%if 0%{?git}
-%autosetup -p1 -n kclock-master-%{commit}
-%else
-%autosetup -p1 -n kclock-%{?git:master}%{!?git:%{version}}
-%endif
+%autosetup -p1 -n kclock-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja -G Ninja
+	-G Ninja
 
 %build
 %ninja_build -C build

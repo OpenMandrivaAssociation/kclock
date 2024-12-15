@@ -4,8 +4,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		plasma6-kclock
-Version:	24.08.3
-Release:	%{?git:0.%{git}.}2
+Version:	24.12.0
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/kclock/-/archive/%{gitbranch}/kclock-%{gitbranchd}.tar.bz2
 %else

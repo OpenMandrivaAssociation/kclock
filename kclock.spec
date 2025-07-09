@@ -3,7 +3,7 @@
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name:		plasma6-kclock
+Name:		kclock
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}

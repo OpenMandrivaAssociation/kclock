@@ -4,7 +4,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		kclock
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/kclock/-/archive/%{gitbranch}/kclock-%{gitbranchd}.tar.bz2
@@ -14,8 +14,6 @@ Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kcloc
 Summary:	Clock applet for Plasma Mobile
 License:	GPLv3
 Group:		Applications/Productivity
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6DBus)
@@ -44,23 +42,15 @@ BuildRequires:	pkgconfig(openssl)
 BuildRequires: qt6-qtbase-theme-gtk3
 BuildRequires: qt6-qtmultimedia-gstreamer
 
+%rename plasma6-kclock
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 Clock applet for Plasma Mobile
 
-%prep
-%autosetup -p1 -n kclock-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang kclock --all-name
-
-%files -f kclock.lang
+%files -f %{name}.lang
 %{_bindir}/kclock
 %{_bindir}/kclockd
 %{_datadir}/applications/org.kde.kclock.desktop

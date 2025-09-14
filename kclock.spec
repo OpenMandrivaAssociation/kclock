@@ -4,7 +4,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		kclock
-Version:	25.08.0
+Version:	25.08.1
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/kclock/-/archive/%{gitbranch}/kclock-%{gitbranchd}.tar.bz2

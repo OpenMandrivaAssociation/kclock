@@ -4,7 +4,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		kclock
-Version:	25.08.1
+Version:	25.08.2
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/kclock/-/archive/%{gitbranch}/kclock-%{gitbranchd}.tar.bz2
@@ -61,7 +61,6 @@ Clock applet for Plasma Mobile
 %{_datadir}/applications/org.kde.kclock.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.kde.kclock.svg
 %{_datadir}/metainfo/org.kde.kclock.appdata.xml
-%{_datadir}/metainfo/org.kde.plasma.kclock_1x2.appdata.xml
 %{_sysconfdir}/xdg/autostart/org.kde.kclockd-autostart.desktop
 %{_datadir}/knotifications6/kclockd.notifyrc
 %{_datadir}/plasma/plasmoids/org.kde.plasma.kclock_1x2

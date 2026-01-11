@@ -46,6 +46,7 @@ BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(wayland-client)
+BuildRequires:	pkgconfig(wayland-protocols)
 BuildRequires: qt6-qtbase-theme-gtk3
 BuildRequires: qt6-qtmultimedia-gstreamer
 

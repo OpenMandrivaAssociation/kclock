@@ -45,6 +45,7 @@ BuildRequires:	cmake(OpenSSL)
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	pkgconfig(wayland-protocols)
+BuildRequires:	cmake(PlasmaWaylandProtocols)
 BuildRequires: qt6-qtbase-theme-gtk3
 BuildRequires: qt6-qtmultimedia-gstreamer
 
